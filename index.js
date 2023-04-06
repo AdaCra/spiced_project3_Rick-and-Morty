@@ -21,10 +21,19 @@ async function getCharacters(url) {
   const response = await fetch(url);
   const jsonData = await response.json();
   const characterList = jsonData.results;
-git 
   characterList.forEach((character) => {
     createCharacterCard(character);
   });
 }
 
 getCharacters(characterUrl);
+
+searchBar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  searchQuery = searchBar.querySelector("input").value;
+  getCharacters();
+});
+
+// Prevent page refresh on form submission
+
+// 1. when there's an event, we want to grab the text input. 2. get the value of the search. 3. store that information into the search input variable. 4. then search with this information
