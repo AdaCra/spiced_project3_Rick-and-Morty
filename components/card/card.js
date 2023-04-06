@@ -1,4 +1,4 @@
-function createCharacterCard(character) {
+export function createCharacterCard(character) {
   const cardHTML = `
     <li class="card">
     <div class="card__image-container">
