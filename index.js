@@ -21,11 +21,9 @@ async function getCharacters(url) {
   const response = await fetch(url);
   const jsonData = await response.json();
   const characterList = jsonData.results;
-  console.log(characterList);
-
+git 
   characterList.forEach((character) => {
     createCharacterCard(character);
-    console.log(character);
   });
 }
 
