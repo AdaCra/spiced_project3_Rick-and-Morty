@@ -8,7 +8,8 @@
     />
     <title>Rick and Morty Character Log</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script type="module" src="index.js"></script>
+
+    <script src="./index.js" type="module" defer></script>
   </head>
   <body>
     <h1 class="title">Rick and More</h1>
@@ -32,7 +33,7 @@
         </form>
       </div>
       <ul class="card-container" data-js="card-container">
-        <li class="card">
+        <!-- <li class="card">
           <div class="card__image-container">
             <img
               class="card__image"
@@ -52,14 +53,14 @@
               <dd class="card__info-description">51</dd>
             </dl>
           </div>
-        </li>
+        </li> -->
       </ul>
     </main>
     <nav class="navigation" data-js="navigation">
       <button class="button button--prev" data-js="button-prev">
         previous
       </button>
-      <span class="navigation__pagination" data-js="pagination">1 / 1</span>
+      <span class="navigation__pagination" data-js="pagination"></span>
       <button class="button button--next" data-js="button-next">next</button>
     </nav>
   </body>
