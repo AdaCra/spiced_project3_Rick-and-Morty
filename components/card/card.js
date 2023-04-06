@@ -22,9 +22,9 @@ function createCharacterCard(character) {
     </div>
   </li>
     `;
+  const cardContainer = document.querySelector('[data-js="card-container"]');
 
-  const cardElement = document.createElement("li");
-  cardElement.innerHTML = cardHTML;
+  cardContainer.innerHTML = cardHTML;
 
   return cardElement;
 }
