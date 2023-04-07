@@ -1,7 +1,8 @@
 // Task 1 : Create Character Card Function
 import { createCharacterCard } from "./components/card/card.js";
 
-// Task 2 : Get Character Data
+// Task 3 : Search Character Names
+
 const cardContainer = document.querySelector('[data-js="card-container"]');
 const searchBarContainer = document.querySelector(
   '[data-js="search-bar-container"]'
@@ -31,13 +32,24 @@ async function getCharacters() {
     maxPage = jsonData.info.pages;
 
     const characterList = jsonData.results;
-
+    cardContainer.innerHTML = `<li id="spacer_list"></li>`;
     characterList.forEach((character) => {
       createCharacterCard(character);
       pagination.innerHTML = `${page}/${maxPage}`;
     });
+    characterList.length === 1
+      ? (cardContainer.style.height = "100%")
+      : (cardContainer.style.height = "");
   } catch (error) {
-    console.error(error);
+    // console.error(error);
+    cardContainer.innerHTML = `
+      <div id="img_container">
+        <img
+          id="bad-response-twirly"
+          src="../../assets/portal-rick-and-morty edit.gif"
+          alt="Aww geez, Morty. You know what that means? We screwed up... again! Graaaahh!"
+        />
+      </div>`;
   }
 }
 
@@ -46,7 +58,8 @@ getCharacters(page);
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
   searchQuery = searchBar.querySelector("input").value;
-  cardContainer.innerHTML = "";
+  cardContainer.innerHTML = ``;
+  page = 1;
   getCharacters();
 });
 
@@ -54,12 +67,19 @@ nextButton.addEventListener("click", () => {
   if (page < maxPage) {
     page++;
     cardContainer.innerHTML = "";
+  } else if (page === maxPage) {
+    page = 1;
+    cardContainer.innerHTML = "";
   }
   getCharacters();
 });
+
 prevButton.addEventListener("click", () => {
   if (page > 1) {
     page--;
+    cardContainer.innerHTML = "";
+  } else if (page === 1) {
+    page = maxPage;
     cardContainer.innerHTML = "";
   }
   getCharacters();

@@ -1,0 +1,117 @@
+@import "../components/card/card.css";
+@import "../components/search-bar/search-bar.css";
+@import "../components/nav-button/nav-button.css";
+@import "../components/nav-pagination/nav-pagination.css";
+
+@font-face {
+  font-family: "get_shwifty";
+  src: url("./get_schwifty.woff") format("woff"),
+    url("./get_schwifty.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Variables */
+
+  --color-nemo: #ff4a11;
+  --color-granite: #252629;
+  --color-water-10: #f3f5f9;
+  --color-foam: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 1fr 60px;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+dt,
+dl,
+dd {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+header {
+  z-index: 10;
+  position: sticky;
+  box-shadow: #25262999 2px 2px 1px, #25262999 1px 4px 2px,
+    #25262999 1px 8px 4px, #25262999 1px 16px 8px, #25262999 1px 32px 16px;
+}
+
+.title {
+  font-family: "get_shwifty";
+  font-size: 3em;
+  color: #00afcc;
+  text-shadow: -2px -2px 0 #9aff8c, 2px -2px 0 #9aff8c, -2px 2px 0 #9aff8c,
+    2px 2px 0 #9aff8c;
+  background-color: var(--color-granite);
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+  width: 100%;
+  height: 120%;
+  display: grid;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  z-index: 10;
+}
+
+main {
+  overflow-y: auto;
+  padding: 0;
+}
+
+.card-container {
+  background-color: var(--color-granite);
+  display: grid;
+  gap: 2rem;
+  padding: 20px;
+  place-content: center;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr 90px 1fr;
+  width: 100%;
+  height: 100%;
+  gap: 0px;
+  background-color: #252629;
+  z-index: 10;
+  box-shadow: #252629 0px -5px 10px, #252629 0px -10px 10px,
+    #252629 0px -15px 10px, #252629 0px -20px 10px#252629 0px -25px 10px;
+}
+
+#img_container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 83vh;
+}
+#bad-response-twirly {
+  margin-top: 100px;
+  height: 400px;
+}
+
+#spacer_list {
+  height: 50px;
+}

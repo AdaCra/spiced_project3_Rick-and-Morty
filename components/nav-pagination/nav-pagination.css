@@ -1,6 +1,13 @@
 .navigation__pagination {
   display: grid;
   place-items: center;
-  background-color: var(--color-water-10);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 175, 204, 1) 30%,
+    rgba(154, 255, 140, 1) 70%,
+    rgba(37, 38, 41, 1) 80%,
+    rgba(37, 38, 41, 0) 90%
+  );
   font-size: 1.2rem;
+  user-select: none;
 }
