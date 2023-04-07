@@ -56,6 +56,7 @@ searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
   searchQuery = searchBar.querySelector("input").value;
   cardContainer.innerHTML = ``;
+  page = 1;
   getCharacters();
 });
 
