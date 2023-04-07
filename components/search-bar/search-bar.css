@@ -1,15 +1,15 @@
 .search-bar-container {
-  position: sticky;
-  top: 10px;
+  height: 100px;
+  top: 50px;
   max-width: 100%;
   width: 340px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   z-index: 2;
 }
 
 .search-bar {
   padding: 14px 20px 14px 30px;
-  border-radius: 999px;
+  border-radius: 50px;
   background-color: var(--color-granite);
   color: var(--color-water-10);
   display: grid;
