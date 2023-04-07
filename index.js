@@ -37,6 +37,9 @@ async function getCharacters() {
       createCharacterCard(character);
       pagination.innerHTML = `${page}/${maxPage}`;
     });
+    characterList.length === 1
+      ? (cardContainer.style.height = "100%")
+      : (cardContainer.style.height = "");
   } catch (error) {
     // console.error(error);
     cardContainer.innerHTML = `
